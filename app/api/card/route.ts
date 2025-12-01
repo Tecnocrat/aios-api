@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { AIOS_CONFIG } from '@/lib/config';
-import { generateMetricCardSVG } from '@/lib/svg-generator';
+import { AIOS_CONFIG } from '../../../lib/config';
+import { generateMetricCardSVG } from '../../../lib/svg-generator';
 
 export const runtime = 'edge';
 

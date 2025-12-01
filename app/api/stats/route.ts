@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { AIOS_CONFIG } from '@/lib/config';
+import { AIOS_CONFIG } from '../../../lib/config';
 
 export const runtime = 'edge';
 

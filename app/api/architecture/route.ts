@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { generateArchitectureSVG } from '@/lib/svg-generator';
+import { generateArchitectureSVG } from '../../../lib/svg-generator';
 
 export const runtime = 'edge';
 
