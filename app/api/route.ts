@@ -7,13 +7,26 @@ export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const format = searchParams.get('format') || 'json';
 
+  const currentStage = AIOS_CONFIG.roadmap.find(s => s.status === 'complete') || AIOS_CONFIG.roadmap[0];
+
   const data = {
-    name: 'AIOS - Adaptive Intelligence Operating System',
+    name: 'AIOS-win - Supercell Architecture',
+    description: 'Transform Windows 11 into a self-aware, agentic supercell',
     version: '2.0.0',
     status: 'active',
+    evolutionStage: {
+      current: currentStage.stage,
+      name: currentStage.name,
+      description: currentStage.desc,
+      totalStages: AIOS_CONFIG.roadmap.length,
+    },
     metrics: AIOS_CONFIG.metrics,
-    architecture: AIOS_CONFIG.architecture,
-    repository: AIOS_CONFIG.repo,
+    infrastructure: AIOS_CONFIG.architecture.layers,
+    cells: AIOS_CONFIG.architecture.cells,
+    core: AIOS_CONFIG.architecture.core,
+    services: AIOS_CONFIG.architecture.services,
+    roadmap: AIOS_CONFIG.roadmap,
+    repositories: AIOS_CONFIG.repos,
     api: {
       endpoints: [
         { path: '/api/stats', description: 'Get AIOS statistics' },
